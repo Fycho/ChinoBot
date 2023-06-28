@@ -60,7 +60,7 @@ func NewOpenAIResponse(viper *viper.Viper, input string) (output string) {
 	config := openai.DefaultConfig(key)
 
 	if proxy != "" {
-		proxyURL, err := url.Parse("http://127.0.0.1:7890")
+		proxyURL, err := url.Parse(proxy)
 		if err != nil {
 			fmt.Printf("proxyURL error: %v\n", err)
 			return
